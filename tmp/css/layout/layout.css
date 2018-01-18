@@ -1,0 +1,226 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.container::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.no-sidebars #content {
+  width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  .no-sidebars #content {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 100%;
+  }
+  .no-sidebars #content:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .no-sidebars #content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+  }
+  .no-sidebars #content:last-child {
+    margin-right: 0;
+  }
+}
+
+.one-sidebar.sidebar-second #content {
+  width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  .one-sidebar.sidebar-second #content {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 74.10533%;
+  }
+  .one-sidebar.sidebar-second #content:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .one-sidebar.sidebar-second #content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+  }
+  .one-sidebar.sidebar-second #content:last-child {
+    margin-right: 0;
+  }
+}
+
+.one-sidebar.sidebar-first #content {
+  width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  .one-sidebar.sidebar-first #content {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 74.10533%;
+    margin-left: 25.89467%;
+  }
+  .one-sidebar.sidebar-first #content:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .one-sidebar.sidebar-first #content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%;
+    margin-left: 25.58941%;
+  }
+  .one-sidebar.sidebar-first #content:last-child {
+    margin-right: 0;
+  }
+}
+
+.two-sidebars #content {
+  width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  .two-sidebars #content {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+    margin-left: 25.89467%;
+  }
+  .two-sidebars #content:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .two-sidebars #content {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-left: 25.58941%;
+  }
+  .two-sidebars #content:last-child {
+    margin-right: 0;
+  }
+}
+
+#sidebar-first {
+  width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  #sidebar-first {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 9.36867%;
+    margin-left: -77.684%;
+  }
+  #sidebar-first:last-child {
+    margin-right: 0;
+  }
+  .one-sidebar.sidebar-first #sidebar-first {
+    margin-left: -103.57866%;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  #sidebar-first {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    margin-left: -76.76824%;
+  }
+  #sidebar-first:last-child {
+    margin-right: 0;
+  }
+  .one-sidebar.sidebar-first #sidebar-first {
+    margin-left: -102.35765%;
+  }
+}
+
+#sidebar-second {
+  width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  #sidebar-second {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 22.316%;
+    margin-left: 0%;
+  }
+  #sidebar-second:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  #sidebar-second {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    margin-left: 0%;
+  }
+  #sidebar-second:last-child {
+    margin-right: 0;
+  }
+}
+
+#footer {
+  float: none;
+  clear: both;
+}
+
+#header, #footer,
+#sidebar-first,
+#sidebar-second,
+#navigation {
+  background: rgba(170, 170, 170, 0.2);
+}
+
+#header,
+#footer,
+.mission,
+.breadcrumb,
+.node {
+  clear: both;
+}
+
+/*# sourceMappingURL=layout.css.map */

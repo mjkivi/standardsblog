@@ -1,0 +1,5 @@
+mb_convert_encoding(
+    file_get_contents('http://www.tvrage.com/quickinfo.php?show=Surviver&ep=20x02&exact=0'),
+    "HTML-ENTITIES",
+    "UTF-8"
+  );

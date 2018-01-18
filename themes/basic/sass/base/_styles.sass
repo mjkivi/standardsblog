@@ -1,0 +1,740 @@
+// Site Wide Elements
+
+#header-region, #main .container, #footer .container, #sidebar-first, #sidebar-second
+  background: #fff !important;
+
+body, #header, #footer
+  background: #eee !important;
+  font-family: Georgia, serif !important;
+
+// Header Elements
+#header-region
+  position: relative;
+  overflow: auto;
+#block-responsivemenumobileicon
+  position: absolute;
+  span.label
+    display: none;
+  .responsive-menu-toggle-icon 
+    background: #00575b;
+    border-top: 2px solid #00575b;
+    border-right: 2px solid #00575b;
+    border-bottom: 2px solid #00575b;
+.site-logo 
+  margin: 0 0 0 48px !important;
+  display: inline-block; 
+
+.site-name
+  @media all and (max-width:720px)
+    float: left;
+    width: 100%;
+    margin: 0 0 0 20px !important;
+  margin: -9px 0 0 48px !important;
+  line-height: .8em !important;
+  padding: 0 !important;
+  a 
+    font-size: .8em;
+    color: #000 !important;
+    font-weight: 500;
+
+.site-slogan
+  @media all and (max-width:720px)
+    float: left;
+    width: 90%;
+    margin: 0 0 0 20px !important;
+  margin: 0 0 0 52px !important;
+  color: #000;
+  font-size: .85em;
+
+.search-block-form
+  @media all and (max-width:720px)
+    float: left;
+    width: 100%;
+    margin: 0 0 0 20px !important;
+  margin: -43px 30px 0 30px !important;
+  float: right;
+  clear: both;
+  h2
+    font-size: 1.2em !important;
+    margin: 0 !important;
+  input.form-search
+    display: inline;
+    width: 200px;
+    padding: .25em !important;
+  input[type="submit"] 
+    background-color: #c0c0c0 !important;
+    color: #000;
+    font-size: 12px !important;
+    margin-top: -4px;
+
+.front .search-block-form
+  @media all and (max-width:720px)
+    margin: 0 0 0 20px !important;
+  margin: -43px 30px 0 30px !important;
+ 
+
+#block-basic-main-menu
+  background: #00575b;
+  margin: 25px 0 0 0;
+  ul.menu
+    text-align: center;
+    li 
+      display: inline-block;
+      height: 30px;
+      padding: 0 !important;
+      margin: 0 -4px 0 0 !important;
+      background: url('../../images/optimized/menu-btn-bg.png') repeat-x;
+      border-right: 1px solid #2a6a6d !important; 
+      border-left: 1px solid #508c8f !important;
+      line-height: 1.7em;
+      a
+        color: #fff;
+        font-family: arial, sans-serif;
+        font-size: .75em;
+        text-shadow: 1px 1px #00575b;
+        padding: 5px 30px;
+  @media all and (max-width:1030px)
+    display: none;
+
+#block-secondarylinks
+  position: absolute;
+  right: 10px;
+  top: 0;
+  min-width: 120px;
+  width: 120px;
+  background: url('../../images/optimized/secondary-bg.png') no-repeat;
+  text-align: right;
+  min-height: 23px;
+  line-height: 1em !important;
+  p 
+    margin: 0 !important;
+    padding: 0 !important;
+
+  a
+    color: #fff;
+    font-family: arial, sans-serif;
+    font-size: .75em;
+    line-height: .5em;
+    margin: -4px 12px 0 0;
+    line-height: .5em !important;
+    text-shadow: 1px 1px #00575b;
+    display: inline-block
+
+#block-gesmerlogoheader 
+  @media all and (max-width:720px)
+    position: relative;
+    top: 0 !important;
+    right: 0 !important;
+    float: left;
+    margin: 0 0 0 20px;
+    display: none;
+
+  position: absolute;
+  right: 10px;
+  top: 15px;
+
+
+// Body Elements
+#main 
+  background: rgba(170, 170, 170, 0.2) none repeat scroll 0 0;
+#block-homebreadcrumbs, 
+#block-basic-breadcrumbs
+  @media all and (max-width:720px)
+    background: #fff;
+    float: left;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: .8em;
+  padding: 2px 0 2px 20px;
+  background: #eae7e2;
+  margin: 5px 0;
+  ol 
+    li:not(:last-child):after
+      content: " > ";
+    li
+      display: inline;
+      a
+        text-decoration: underline;
+
+#block-views-block-welcome-user-block-1
+  font-family: Verdana, Arial, sans-serif;
+  font-size: .7em;
+
+.front 
+  .block-basic-page-title
+    h1
+      display: none;
+
+  #block-basic-content
+    // Front page View Fields
+    .views-row 
+      position: relative;
+      border-bottom: 1px dotted #333;
+      margin: 20px 0;
+      overflow: hidden;
+    .views-field-title
+      margin-bottom: 10px;
+      display: inline-block;
+      h2
+        font-size: 1.5em !important;
+        font-weight: 500 !important;
+        line-height: 1.3em;
+        font-family: Georgia, serif;
+        a 
+          color: $consortium-grn;
+          &:hover
+            text-decoration: underline;
+    .edit-link
+      display: block;
+      margin: -20px 0 5px 0;
+      font-weight: bold;
+      font-family: Arial, san-serif;
+      color: #333;
+    .views-field-field-topic-image
+      float: right;
+      margin: 0 0 10px 10px;
+    .views-field-field-teaser
+      font-family: Verdana, Arial, sans-serif;
+      font-size: .85em;
+      margin: 10px 0 0 0;
+      a 
+        color: #2e31db;
+        text-decoration: underline;
+      img 
+        float: left;
+        margin: 0 10px 10px 0;
+    .views-field-created,
+    .views-field-uid,
+    .views-field-totalcount
+      font-size: .85em;
+
+    .views-field-totalcount
+      margin-bottom: 10px;
+
+    .views-field-path-2
+      .article-footer 
+        font-weight: bold;
+        font-size: .75em;
+        text-align: center;
+        margin-bottom: 20px;
+        a 
+          color: #000099;
+          text-decoration: underline;
+    .pager
+      @media all and (max-width:720px)
+        font-size: 1.2em;
+        li
+          padding: 8px;
+      font-size: 1em;
+      padding: 0px;
+      text-align: center;
+      .pager__item--active
+        font-size: 1.2em;
+        font-weight: bold;
+
+
+  article.node
+    border-bottom: 1px dotted #000;
+    padding-bottom: 25px;
+    header 
+      h2
+        font-family: Georgia, serif;
+        font-size: 1.2em;
+        font-weight: 500;
+        line-height: 1.5em;
+        padding-top: .75em;
+        a
+          color: #000;
+      .submitted
+        padding: 10px 0 0;
+        font-size: .8em;
+
+    .links
+      text-align: center;
+      ul
+        li
+          display: inline-block;
+          margin: 0 5px;
+          a 
+            font-family: Verdana, Arial, sans-serif;
+            color: #000099;
+            text-decoration: underline; 
+            font-size: .7em; 
+            text-transform: lowercase;
+            font-weight: bold;
+        li.statistics-counter
+          display: none;
+
+    .content
+      margin: 10px 0 0 0;
+      font-family: Verdana, Arial, sans-serif !important;
+      font-size: .85em;
+      line-height: 1.4em !important;
+      a
+        color: #000099 !important;
+      img
+        float: left;
+        margin: 0 10px 10px 0;
+
+  a.feed-icon
+    display: none;         
+
+
+
+#sidebar-first
+  background: #fff !important;
+  overflow: hidden;
+  border-right: 1px solid #efefef;
+
+#sidebar-first .block-block-content,
+#sidebar-first .block-views, 
+#sidebar-first .block-user
+  @media all and (max-width:720px)
+    width: 90%;
+    margin: 0 auto !important;
+  width: 175px;
+  margin: 20px auto;
+  h2
+    @media all and (max-width:720px)
+      width: 100%;
+      margin: 20px 0 0 20px !important;
+    color: $consortium-grn;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 500;
+    width: 175px;
+    margin: 20px auto 5px;
+  
+  fieldset
+    @media all and (max-width:720px)
+      float: left;
+      width: 100%;
+      margin: 0 0 20px 20px !important;
+      overflow: hidden;
+    font-family: Verdana, Arial, sans-serif;
+    width: 175px;
+    margin: 0 auto 10px;
+    border: 4px solid #eae7e2;
+    
+    legend
+      font-size: .75em;
+      margin: 0 0 0 10px;
+      font-weight: 500;
+  ul
+    @media all and (max-width:720px)
+      //float: left;
+      width: 90%;
+      margin: 0 auto !important;
+
+    width: 175px;
+    margin: 0 auto;
+    padding: 0;
+    li
+      background: url("../../images/optimized/icons/icon_li_list.gif") no-repeat 0 0; 
+      list-style: outside none none;
+      padding-left: 13px;
+      line-height: 1em;
+      a 
+        color: #000099;
+        font-size: .75em;
+        text-decoration: underline;
+        font-family: Verdana, Arial, sans-serif;
+
+#block-clients, 
+#block-clients--3
+  background: #f2f6f6;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 9px;
+  height: auto;
+  padding: 5px;
+  text-align: center;
+  width: 175px;
+  margin: 20px auto;
+  p
+    font-size: 1.3em !important;
+
+  #rotating-clients
+    padding: 5px;
+    #clients
+      width: 135px;
+      margin: 0 auto;
+
+    a.view-clients-list
+      text-transform: uppercase;
+      color: #000099;
+      padding: 2px;
+      border: 1px solid #000099;
+      background: #fff;
+
+#block-books,
+#block-books--3
+  font-family: Verdana, Arial, sans-serif;
+  font-style: italic;
+  text-align: center;
+  p
+    @media all and (max-width:720px)
+      float: left;
+      width: 100%;
+
+    width: 175px;
+    margin: 0 auto;
+  a
+    font-family: Verdana, Arial, sans-serif;
+    color: #000099;
+    text-decoration: underline;
+
+#block-usefullinks,
+#block-usefullinks--3
+  font-family: Verdana, Arial, sans-serif;
+  a
+    display: block;
+    color: #000099;
+    font-size: .75em;
+    text-decoration: underline;
+    padding: 0 0 0 20px;
+  a.subscribe
+    background: rgba(0, 0, 0, 0) url("../../images/optimized/icons/icon_a_subscribe.gif") no-repeat scroll 0 0;
+  a.email
+    background: rgba(0, 0, 0, 0) url("../../images/optimized/icons/icon_a_email.gif") no-repeat scroll 0 0;
+  a.press
+    background: rgba(0, 0, 0, 0) url("../../images/optimized/icons/icon_a_press.gif") no-repeat scroll 0 0;
+  a.sitetour
+    background: rgba(0, 0, 0, 0) url("../../images/optimized/icons/icon_a_sitetour.gif") no-repeat scroll 0 0;
+
+#block-views-block-topics-block-1,
+#block-views-block-topics-block-1--3
+  font-family: Verdana, Arial, sans-serif;
+  h2
+    margin: 20px 0 0 0;
+  .topic-count
+    font-size: .75em;
+
+#block-views-block-blogs-i-read-block-1,
+#block-views-block-blogs-i-read-block-1--3
+  > div
+    @media all and (max-width:720px)
+      float: left;
+      width: 90%;
+      margin: 0 0 0 20px !important;
+    width: 175px;
+    margin: 0 auto;
+    .views-row
+      background: url("../../images/optimized/icons/icon_li_list.gif") no-repeat 0 0; 
+      list-style: outside none none;
+      padding-left: 13px;
+      line-height: 1em;
+      a 
+        color: #000099;
+        font-size: .75em;
+        text-decoration: underline;
+        font-family: Verdana, Arial, sans-serif;
+
+#sidebar-second 
+  border-left: 1px solid #efefef;
+  #block-signupforemailalerts
+    a
+      color: $consortium-grn;
+
+#sidebar-second .block-block-content,
+#sidebar-second .block-user,
+#sidebar-second .block-views,
+#sidebar-second #block-quoteoftheday,
+#sidebar-second #block-latestnews-2,
+#sidebar-second #block-managesubscriptions,
+#sidebar-second #block-managesubscriptions--3
+  @media all and (max-width:720px)
+    width: 90%;
+    margin: 0 auto !important;
+
+  width: 240px;
+  margin: 20px auto;
+  h2
+    color: $consortium-grn;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 500;
+    margin: 10px auto 5px;
+  
+  fieldset
+    @media all and (max-width:720px)
+      float: left;
+      width: 100%;
+    font-family: Verdana, Arial, sans-serif;
+    width: 175px;
+    margin: 0 auto 10px;
+    border: 4px solid #eae7e2;
+    
+    legend
+      font-size: .75em;
+      margin: 0 0 0 10px;
+      font-weight: 500;
+  ul
+    @media all and (max-width:720px)
+      //float: left;
+      width: 100%;
+      margin: 0 0 0 20px !important;
+
+
+    width: 175px;
+    margin: 0 auto;
+    li
+      background: url("../../images/optimized/icons/icon_li_list.gif") no-repeat 0 0; 
+      list-style: outside none none;
+      padding-left: 13px;
+      line-height: 1em;
+      a 
+        color: #000099;
+        font-size: .75em;
+        text-decoration: underline;
+        font-family: Verdana, Arial, sans-serif;
+
+  .user-register-form
+    .description, 
+    #edit-contact--5 
+      display: none;
+
+    .button
+      background: #00575b;
+
+
+#sidebar-second #block-managesubscriptions,
+#sidebar-second #block-managesubscriptions--3
+  #edit-subscriptions--3
+    h2
+      font-family: Verdana, Arial, sans-serif;
+      font-size: .75em
+    p 
+      font-family: Verdana, Arial, sans-serif;
+      font-size: .7em;
+  .js-form-wrapper
+    div:not(.js-form-item-subscriptions-user-29125) 
+      display: none;
+    .js-form-type-checkbox
+      padding: 5px 0;
+      input
+        vertical-align: top;
+      label
+        display: inline-block;
+        font-family: Arial, San-serif;
+        font-size: .8em;
+        line-height: 1.3em;
+        width: 80%;
+        vertical-align: top;
+
+body.front #sidebar-second #block-signupforemailalerts
+  border-top: 1px dotted #333;
+  p
+    font-family: Verdana, Arial, sans-serif;
+    font-size: .7em;
+
+#sidebar-second #block-quoteoftheday
+  font-family: Verdana, Arial, sans-serif;
+  border-top: 1px dotted #333;
+  p
+    font-size: .75em;
+  a.all
+    color: #000099;
+    text-decoration: underline;
+    display: block;
+    font-size: .95em;
+    margin: 5px 0 0 0;
+
+#sidebar-second #block-latestnews-2
+  font-family: Verdana, Arial, sans-serif;
+  border-top: 1px dotted #333;
+  a.title
+    font-weight: normal;
+    font-size: .8em
+    font-family: Arial, sans-serif;
+    color: #000099;
+    text-decoration: underline;
+    display: block;
+  b.author
+    font-size: .7em;
+  p
+    font-size: .7em;
+  a.full
+    color: #000099;
+    text-decoration: underline;
+    display: inline;
+    
+
+#block-aboutthestandardsblog,
+#block-aboutthestandardsblog--3,
+  @media all and (max-width:720px)
+    margin: 20px auto !important;
+    width: 90%
+
+  h2 
+    font-size: .9em !important;
+    font-weight: bold !important;
+  p
+    font-size: .7em;
+    font-family: Verdana, Arial, sans-serif;
+
+    a
+      color: #000099;
+      text-decoration: underline;  
+
+// Main Responsive Rules, columns, etc
+#content
+  .topic 
+    float: right;
+    margin: 0 0 10px 5px;
+  .book-ad 
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    a
+      img
+        float: none !important;
+        text-align: center;
+        display: inline;
+
+  @media all and (max-width:720px)
+    padding: 20px;
+
+.comments 
+  display: block !important;
+  margin: 30px 0 0 0;
+  h2
+    font-family: Georgia, serif;
+    color: #797979;
+// Article Nodes
+.page-articles 
+  h1
+    color: $consortium-grn;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    font-weight: 500; 
+
+  article.node 
+    line-height: 1.5em;
+    font-family: Verdana, arial, sans-serif
+    font-size: .85em;
+
+    header
+      .submitted
+        font-family: Georgia, serif;
+
+  .views-element-container
+    .views-row
+      margin: 0 !important;
+      border-bottom: 0 !important;
+      .views-field-totalcount
+        font-size: 1em !important;
+
+body.page-topic, 
+body.page-topics,
+body.page-taxonomy, 
+body.page-user
+  h1
+    font-family: Georgia, Serif;
+    font-size: 1.7em;
+    font-weight: 500;
+  #block-basic-content 
+    article
+      display: inline-block;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      width: 90%;
+      border-bottom: 1px dotted #333;
+      h2
+        font-size: 1.5em !important;
+        font-weight: 500 !important;
+        line-height: 1.3em;
+        font-family: Georgia, serif;
+        a 
+          color: $consortium-grn;
+          &:hover
+            text-decoration: underline;
+      img
+        float: left;
+        margin: 0 10px 10px 0;
+      .submitted
+        font-size: .85em;
+
+      .views-field-totalcount
+        margin-bottom: 10px;
+      .links
+        text-align: center;
+        ul
+          li
+            display: inline-block;
+            margin: 0 5px;
+            a 
+              font-family: Verdana, Arial, sans-serif;
+              color: #000099;
+              text-decoration: underline; 
+              font-size: .7em; 
+              text-transform: lowercase;
+              font-weight: bold;
+          li.statistics-counter
+            display: none;
+
+    .pager
+      @media all and (max-width:720px)
+        font-size: 1.2em;
+        li
+          padding: 8px;
+      font-size: 1em;
+      padding: 0px;
+      text-align: center;
+      .pager__item--active
+        font-size: 1.2em;
+        font-weight: bold;
+    a.feed-icon
+      display: none;
+// User Register Form
+
+form#user-register-form
+  label
+    font-weight: bold;
+    margin-top: 30px;
+
+  label.option
+    display: inline-block;
+
+  details.captcha,
+  details.edit-timezone
+    margin-top: 30px
+    a 
+      font-weight: bold;
+
+
+// Footer
+#footer
+  margin: 0;
+  text-align: center;
+  .container 
+    border-top: 1px solid #efefef;
+  
+  ul.menu
+    width: 50%;
+    margin: 0 auto;
+
+    li
+      display: inline-block;
+      text-align: center;
+      line-height: 1em;
+      padding: 0 0 0 5px;
+
+      a
+        color: #000099;
+        font-size: .8em;
+        text-decoration: underline;    
+
+    li:not(:first-child)
+      border-left: 1px solid #ccc;
+
+  #block-footerinfo,
+  #block-footerinfo--2
+    color: #999;
+    font-size: .8em;
+    width: 50%;
+    margin: 0 auto 20px;
+    a
+      color: #000099;
+      text-decoration: underline;    
+

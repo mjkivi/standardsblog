@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Holds hook implementation for the Message example module.
+ */
+
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\node\Entity\Node;
+use Drupal\comment\Entity\Comment;
+use Drupal\user\Entity\User;
+use Drupal\message\Entity\Message;
+
+/**
+ * Implements hook_node_insert().
+ */
+function consorthings_node_insert(Node $node) {
+  $message = Message::create(['template' => 'example_create_node', 'uid' => $node->get('uid')]);
+  $message->set('field_node_reference', $node);
+  $message->set('field_published', $node->isPublished());
+  $message->save();
+
+  $options = [];
+
+  $notifier = \Drupal::service('message_notify.sender');
+  $notifier->send($message, $options);
+}
+
+
+
+/**
+ * Implements hook_user_insert().
+ */
+function consorthings_user_insert(User $account) {
+  Message::create(['template' => 'example_user_register', 'uid' => $account->id()])->save();
+}
+
+
+
+/**
+ * Set message entity published field when it changes in the related entity.
+ *
+ * @param \Drupal\Core\Entity\ContentEntityBase $entity
+ *   The entity object.
+ */
+function consorthings_update_message_status(ContentEntityBase $entity) {
+  if ($entity->isPublished() == $entity->original->isPublished()) {
+    return;
+  }
+
+  $query = \Drupal::entityQuery('message');
+
+  $field = 'field_' . $entity->getEntityType()->id() . '_reference';
+  $query->condition($field . '.target_id', $entity->id());
+
+  $results = $query->execute();
+
+  if (empty($results)) {
+    return;
+  }
+
+  $messages = Message::loadMultiple($results);
+
+  foreach ($messages as $message) {
+    $message->set('field_published', $entity->isPublished());
+    $message->save();
+  }
+}

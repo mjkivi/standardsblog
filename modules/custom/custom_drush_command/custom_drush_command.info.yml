@@ -1,0 +1,5 @@
+name: Custom Drush Command
+type: module
+description: Custom Drush commmands as needed
+core: 8.x
+package: Custom

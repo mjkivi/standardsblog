@@ -1,0 +1,12 @@
+name: Consor Blocks
+type: module
+description: Latest News and Quote of the Day and Client Blocks.
+package: Custom
+# core: 8.x
+dependencies:
+  - drupal:block
+  - drupal:node
+
+# Information added by Drupal.org packaging script on 2017-03-15
+version: '8.x-1.x-dev'
+core: '8.x'

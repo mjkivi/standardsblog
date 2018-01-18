@@ -1,0 +1,16 @@
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 209.8.22.250
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^consortiuminfo\.org$ [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ http://www.consortiuminfo.org/$1 [R=301,L]
+
+ErrorDocument 404 /cons_error.php
+

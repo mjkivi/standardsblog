@@ -1,0 +1,45 @@
+# Migration configuration for geeklog comments. No new concepts here.
+id: geeklog_comment
+label: Geeklog Comments
+migration_group: geeklog
+source:
+  plugin: geeklog_comment
+destination:
+  plugin: entity:comment
+process:
+  pid:
+    plugin: migration
+    migration: geeklog_comment
+    source: pid                
+  entity_id:
+    plugin: migration
+    migration: geeklog_node
+    source: nid                         
+  entity_type:
+    plugin: default_value
+    default_value: node
+  field_name:
+    plugin: default_value
+    default_value: comment
+  comment_type:
+    plugin: default_value
+    default_value: comment
+  subject: title
+  uid:
+    plugin: migration
+    migration: geeklog_user
+    source: uid 
+  name: username
+  # mail: email
+  status:
+    plugin: default_value
+    default_value: 1
+  'comment_body/value': comment
+migration_dependencies:
+  required:
+    - geeklog_node
+    - geeklog_user
+dependencies:
+  enforced:
+    module:
+      - geeklog

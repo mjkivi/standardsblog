@@ -1,0 +1,25 @@
+{
+  "name": "basic",
+  "version": "0.1.0",
+  "dependencies": {
+    "bourbon": "^4.2.7",
+    "bourbon-neat": "^1.8.0",
+    "grunt": "^0.4.5",
+    "grunt-notify": "^0.4.3",
+    "grunt-sass": "^1.1.0",
+    "grunt-svgmin": "^3.1.2"
+  },
+  "description": "=========================== How to Use Grunt with Basic ===========================",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "node-bourbon": "^4.2.8"
+  },
+  "author": "",
+  "license": "MIT"
+}

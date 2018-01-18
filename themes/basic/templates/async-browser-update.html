@@ -1,0 +1,5 @@
+    {% if browser_sync.enabled %}
+      <script id="__bs_script__">
+      document.write("<script async src='http://{{ browser_sync.host }}:{{ browser_sync.port }}/browser-sync/browser-sync-client.js'><\/script>".replace("HOST", location.hostname));
+      </script>
+    {% endif %}

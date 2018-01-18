@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Contains articlemail.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function articlemail_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the articlemail module.
+    case 'help.page.articlemail':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Programmatically send an email when new articles are created.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_mail().
+ */
+function articlemail_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+
+  switch ($key) {
+    case 'create_article':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('New Article created at Consortiuminfo.org: @title', array('@title' => $params['node_title']), $options);
+      $message['field_body'][] = $params['message'];
+      break;
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function articlemail_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+
+  if ($entity->getEntityTypeId() !== 'node' || ($entity->getEntityTypeId() === 'node' && $entity->bundle() !== 'article')) {
+    return;
+  }
+
+  $mailManager = \Drupal::service('plugin.manager.mail');
+
+  $module = 'articlemail';
+  $key = 'create_article';
+  // $to = \Drupal::currentUser()->getEmail();
+  // We are grabbing all the Users who have subscribed 
+  $query = \Drupal::database()->select('user__message_subscribe_email', 'ums');
+  $query->fields('ums', ['entity_id']);
+  $query->condition('ums.message_subscribe_email_value', 1);
+  $users = $query->execute()->fetchAllKeyed(0,0);
+  
+  foreach ($users AS $user) {
+    $entity_manager = \Drupal::entityTypeManager();
+    $user = $entity_manager->getStorage('user')->load($user);
+    $to = $user->getEmail();  
+    $params['message'] = $entity->get('field_body')->value;
+    $params['node_title'] = $entity->label();
+    $langcode = $user->getPreferredLangcode();
+    $send = true;
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+
+    if ($result['result'] !== true) {
+      drupal_set_message(t('There was a problem sending your message and it was not sent.'), 'error');
+    }
+    else {
+      drupal_set_message(t('Your message has been sent.'));
+    }
+ }
+ //exit;
+}

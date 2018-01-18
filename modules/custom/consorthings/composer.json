@@ -1,0 +1,14 @@
+{
+  "name": "drupal/consorthings",
+  "type": "drupal-module",
+  "description": "Quirky things from the old Geeklog site.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/consorthings",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/consorthings",
+    "source": "http://cgit.drupalcode.org/consorthings"
+  },
+  "require": { }
+}

@@ -1,0 +1,7 @@
+block_example.description:
+  path: '/custom/consorblocks'
+  defaults:
+    _controller: '\Drupal\consorblocks\Controller\ConsorBlocksController::description'
+    _title: 'Consor Blocks'
+  requirements:
+    _permission: 'access content'

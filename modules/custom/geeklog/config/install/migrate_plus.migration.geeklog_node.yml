@@ -1,0 +1,67 @@
+# Migration configuration for geeklog content.
+id: geeklog_node
+label: Geeklog Stories
+migration_group: geeklog
+source:
+  plugin: geeklog_node
+destination:
+  plugin: entity:node
+process:
+  # Hardcode the destination node type (bundle) as 'article'.
+  type:
+    plugin: default_value
+    default_value: article
+  # Fields to migrate
+  title: title
+  nid: nid
+  uid:
+    plugin: migration
+    migration: geeklog_user
+    source: uid
+  sticky:
+    plugin: default_value
+    default_value: 0
+  # field_geeklog_sid: sid
+  field_geeklog_tid: tid
+  'body/format':
+    plugin: static_map
+    bypass: true
+    source: body_format
+    map:
+      1: plain_text
+      2: restricted_html
+      3: full_html
+      4: full_html  
+  field_teaser: introtext
+  field_body: bodytext
+  # field_geeklog_created_date: date
+  field_geeklog_hits: hits 
+  field_geeklog_comments: comments 
+  field_geeklog_related: related 
+  field_geeklog_trackbacks: trackbacks 
+  field_tags:
+    plugin: migration
+    migration: geeklog_term
+    source: tid
+  created: 
+    plugin: geeklog_date
+    source: date
+# Our geeklog nodes have references to terms and users, so we want those to be
+# imported first. We make that dependency explicit here - by putting those
+# migrations under the 'required' key, we ensure that the tools will prevent
+# us from running the geeklog_node migration unless the geeklog_term and geeklog_user
+# migrations are complete (although we can override the dependency check by
+# passing --force to the drush migrate-import command). We can also add
+# 'optional' dependencies - these affect the order in which migrations are
+# displayed, and run by default, but does not force you run them in that
+# order.
+# The general rule of thumb is that any migrations referenced by migration
+# process plugins should be required here.
+migration_dependencies:
+  required:
+    - geeklog_term
+    - geeklog_user
+dependencies:
+  enforced:
+    module:
+      - geeklog

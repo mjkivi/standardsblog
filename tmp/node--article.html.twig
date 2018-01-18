@@ -1,0 +1,100 @@
+{# Create classes array. The 'node' class is required for contextual edit links. #}
+{% set classes = [
+  'node'
+] %}
+
+{# BEM inspired class syntax: https://en.bem.info/
+   Enable this code if you would like node classes like "article article--layout-teaser", where article is the content type and teaser is the view mode.
+{% set classes = classes|merge([
+  node.bundle|clean_class,
+  view_mode ? node.bundle|clean_class ~ '--layout-' ~ view_mode|clean_class
+]) %}
+{% set title_classes = [
+  node.bundle|clean_class ~ '__title'
+] %}
+#}
+
+<article{{ attributes.addClass(classes) }}>
+
+  {% if title_prefix or title_suffix or display_submitted or unpublished or page is empty and label %}
+    <header>
+      {{ title_prefix }}
+      {% if not page and label %}
+        <h2{{ title_attributes.addClass(title_classes) }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+      {% endif %}
+      {{ title_suffix }}
+
+      <!-- AddThis Button BEGIN --> 
+      <div class="addthis_toolbox addthis_default_style addthis_32x32_style" addthis:url="http://www.consortiuminfo.org/standardsblog/article.php?story={{ node.field_geeklog_sid.value }}" addthis:title="">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_preferred_3"></a>
+        <a class="addthis_button_preferred_4"></a>
+        <a class="addthis_button_compact"></a>
+        <a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <script type="text/javascript">
+        var addthis_config = {
+          data_track_addressbar: false
+        }
+      </script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=updegrove"></script>
+      <!-- AddThis Button END -->
+      <div style="margin: 8px 0; overflow: visible;">
+         <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.consortiuminfo.org%2Fstandardsblog%2Farticle.php%3Fstory%3D{{ node.field_geeklog_sid.value }}&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true"></iframe>
+      </div>
+
+      {% if display_submitted %}
+        <div class="submitted">
+          {% set createdDate = node.getCreatedTime|date('l, F jS, Y @ h:i A T') %}
+          {{ createdDate }}
+          <div>{% trans %}Contributed by: {{ author_name }}{% endtrans %}</div>
+          <div>{{ drupal_view('node_counter', 'block_1') }}</div>
+        </div>
+      {% endif %}
+
+      {% if not node.published %}
+        <p class="node--unpublished">{{ 'Unpublished'|t }}</p>
+      {% endif %}
+    </header>
+  {% endif %}
+  
+  <div{{ content_attributes.addClass('content') }}>
+    <p>
+      <!--<a href="https://twitter.com/Adversego"><strong><span><span>Follow me on Twitter @Adversego</span></span></strong></a>-->
+      <script type="text/javascript">
+        !function(d,s,id){ 
+          var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+          if(!d.getElementById(id)){
+            js=d.createElement(s);
+            js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js,fjs);
+          }}(document, 'script', 'twitter-wjs');
+      </script>
+
+    {% set tid = node.field_tags.target_id %}
+    {% if tid %}
+      <div class="topic">
+      {{ drupal_field('field_topic_image', 'taxonomy_term', tid) }}
+      </div>
+    {% endif %}
+
+    {% if nid %}
+      <div class="teaser">
+      {{ drupal_field('field_teaser', 'node', nid) }}
+      </div>
+    {% endif %}
+
+
+    {{ content|without('links') }}
+  </div><!-- /.content -->
+
+  {% if content.links %}
+    <div class="links">
+      {{ content.links }}
+    </div><!-- /.links -->
+  {% endif %}
+
+</article><!-- /.node -->

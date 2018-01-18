@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains geeklog.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function geeklog_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the geeklog module.
+    case 'help.page.geeklog':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Geeklog Migration') . '</p>';
+      return $output;
+
+    default:
+  }
+}

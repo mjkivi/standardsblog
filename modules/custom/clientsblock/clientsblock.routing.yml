@@ -1,0 +1,7 @@
+block_example.description:
+  path: '/custom/clientsblock'
+  defaults:
+    _controller: '\Drupal\clientsblock\Controller\ClientsBlockController::description'
+    _title: 'Clients Block'
+  requirements:
+    _permission: 'access content'

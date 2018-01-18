@@ -1,0 +1,5 @@
+name: New Article Mail
+type: module
+description: Programmatically send an Email when a new article is created.
+core: 8.x
+package: Custom

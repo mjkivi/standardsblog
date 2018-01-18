@@ -1,0 +1,8 @@
+name: consorthings
+type: module
+description: Quirky things from the old Geeklog site.
+core: 8.x
+package: Custom
+dependencies:
+  - drupal:block
+  - drupal:node

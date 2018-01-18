@@ -1,0 +1,14 @@
+{
+  "name": "drupal/geeklog",
+  "type": "drupal-module",
+  "description": "Geeklog Migration",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/geeklog",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/geeklog",
+    "source": "http://cgit.drupalcode.org/geeklog"
+  },
+  "require": { }
+}
